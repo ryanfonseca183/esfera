@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@hasSection('title') @yield('title') - @endif {{ config('app.name', 'Laravel')  }}</title>
+    <title>@yield('title') | {{ config('app.name', 'Laravel')  }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -28,7 +28,7 @@
     <main class="container py-4">
         @yield('content')
     </main>
-
+    
     @if(session()->has('success') || session()->has('error'))
         <div class="toast-container position-fixed p-3 bottom-0 end-0">
             <div class="toast align-items-center text-white @if(session()->has('success')) bg-success @else bg-danger @endif border-0 b" role="alert" aria-live="assertive" aria-atomic="true">

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title') Novo funcionário | @parent @endsection
+@section('title', 'Novo funcionário')
 
 @section('content')
 
@@ -19,7 +19,7 @@
     <hr class="mb-5 mt-3">
 
     <x-section title="Dados gerais" description="Preencha as informações básicas do funcionário">
-        <form method="POST" action="{{ route('empresas.funcionarios.store', $empresa->id) }}">
+        <form method="POST" action="{{ route('empresas.funcionarios.store', $empresa->id) }}" novalidate>
             @csrf
             <div class="row">
                 <div class="col">

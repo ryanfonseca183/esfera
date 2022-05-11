@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title') Editar funcionário | @parent @endsection
+@section('title', 'Editar funcionário')
 
 @section('content')
     <x-page-title class="fs-3">
@@ -18,7 +18,7 @@
     <hr class="mb-5 mt-3">
 
     <x-section title="Dados gerais" description="Preencha as informações básicas do funcionário">
-        <form method="POST" action="{{ route('empresas.funcionarios.update', ['empresa' => $empresa->id, 'funcionario' => $funcionario->id]) }}">
+        <form method="POST" action="{{ route('empresas.funcionarios.update', ['empresa' => $empresa->id, 'funcionario' => $funcionario->id]) }}" novalidate>
             @csrf
             @method('PUT')
             <div class="row">

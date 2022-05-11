@@ -1,17 +1,17 @@
 @extends('layouts.app')
 
-@section('title') Editar empresa | @parent @endsection
+@section('title', 'Editar empresa')
 
 @section('content')
     <x-page-title title="Editar empresa" route="empresas.index" class="fs-3" />
     <hr class="mt-3 mb-5">
 
     <x-section title="Dados gerais" description="Preencha as informações básicas da empresa">
-        <form method="POST" action="{{ route('empresas.update', $empresa->id) }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route('empresas.update', $empresa->id) }}" enctype="multipart/form-data" novalidate>
             @csrf 
             @method('PUT')
-            <div class="row">
-                <div class="col-auto">
+            <div class="row gy-3">
+                <div class="col-sm-auto">
                     <x-controls.image label="Logotipo" name="logotipo" :src="($empresa->logotipo ? asset('storage/' . $empresa->logotipo) : '')"/>
                 </div>
                 <div class="col">

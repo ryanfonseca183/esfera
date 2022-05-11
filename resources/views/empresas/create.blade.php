@@ -1,16 +1,16 @@
 @extends('layouts.app')
 
-@section('title') Nova empresa| @parent @endsection
+@section('title', 'Nova empresa')
 
 @section('content')
     <x-page-title title="Criar empresa" route="empresas.index" class="fs-3" />
     <hr class="mb-5 mt-3">
 
     <x-section title="Dados gerais" description="Preencha as informações básicas da empresa">
-        <form method="POST" action="{{ route('empresas.store') }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route('empresas.store') }}" enctype="multipart/form-data" novalidate>
             @csrf
-            <div class="row">
-                <div class="col-auto">
+            <div class="row gy-3">
+                <div class="col-sm-auto">
                     <x-controls.image label="Logotipo" name="logotipo" />
                 </div>
                 <div class="col">
