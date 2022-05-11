@@ -3,7 +3,8 @@
 @section('title') Editar empresa | @parent @endsection
 
 @section('content')
-    <x-page-title title="Editar empresa" route="empresas.index" />
+    <x-page-title title="Editar empresa" route="empresas.index" class="fs-3" />
+    <hr class="mt-3 mb-5">
 
     <x-section title="Dados gerais" description="Preencha as informações básicas da empresa">
         <form method="POST" action="{{ route('empresas.update', $empresa->id) }}" enctype="multipart/form-data">
