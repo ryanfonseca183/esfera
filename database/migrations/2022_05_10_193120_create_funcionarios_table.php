@@ -20,7 +20,7 @@ class CreateFuncionariosTable extends Migration
             $table->unsignedBigInteger('empresa_id');
             $table->foreign('empresa_id')->references('id')->on('empresas');
             $table->string('email')->nullable();
-            $table->string('telefone', 14)->nullable();
+            $table->string('telefone', 15)->nullable();
             $table->timestamps();
         });
     }

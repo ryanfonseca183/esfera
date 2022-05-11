@@ -16,4 +16,7 @@ class Funcionario extends Model
     public function empresa() {
         return $this->belongsTo('App\Models\Empresa', 'empresa_id');
     }
+    public function getNomeCompletoAttribute() {
+        return $this->nome . " " . $this->sobrenome;
+    }
 }

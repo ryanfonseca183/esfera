@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmpresaController;
+use App\Http\Controllers\FuncionarioController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,5 +26,7 @@ Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::delete('empresas', [EmpresaController::class, 'destroy'])->name('empresas.destroy');
 Route::resource('empresas', EmpresaController::class)->except('destroy');
+Route::delete('empresas/{empresa}/funcionarios', [FuncionarioController::class, 'destroy'])->name('empresas.funcionarios.destroy');
+Route::resource('empresas.funcionarios', FuncionarioController::class)->except('destroy', 'index', 'show');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');

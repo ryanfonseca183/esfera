@@ -7,7 +7,7 @@
                 <h2 class="h4"> <i class="bi bi-exclamation-circle-fill text-danger me-2"></i> Atenção</h2>
                 <button type="button" class="btn-close position-absolute" style="top: 1.5rem; right: 1.5rem;" data-bs-dismiss="modal" aria-label="Close"></button>
                 <p>Tem certeza que deseja deletar esse registro? A operação não é reversível</p>
-                <form method="POST" action="{{ route($route) }}" class="mt-4 mb-0">
+                <form method="POST" action="{{ $route }}" class="mt-4 mb-0">
                     @csrf 
                     @method('DELETE')
                     <input type="hidden" name="{{$name}}">
