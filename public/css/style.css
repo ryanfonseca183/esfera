@@ -127,3 +127,11 @@ hr {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+.nav {
+    margin-left: 50px;
+}
+@media (min-width: 576px) {
+    .nav {
+        margin-left:100px
+    }
+}
