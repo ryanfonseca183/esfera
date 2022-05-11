@@ -8,11 +8,19 @@ function filePreview(input, target) {
     }
 }
 $(document).on('change', '.img-upload', function(){
-  // Carrega a imagem para pré-visualização
-  let preview = $(this).parent('.img-container').find('.img-preview');
-  filePreview($(this)[0], preview);
-  preview.addClass('img-selected');
+    let preview = $(this).parent('.img-container').find('.img-preview');
+    filePreview($(this)[0], preview);
+    preview.addClass('img-selected');
 })
 $(function(){
-  $(".toast").toast('show');
+    $(".toast").toast('show');
 })
+var SPMaskBehavior = function (val) {
+  return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
+},
+spOptions = {
+  onKeyPress: function(val, e, field, options) {
+      field.mask(SPMaskBehavior.apply({}, arguments), options);
+  }
+};
+$('.mask-cell').mask(SPMaskBehavior, spOptions);

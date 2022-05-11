@@ -28,9 +28,9 @@
     <main class="container py-4">
         @yield('content')
     </main>
-    <script src="{{ asset('js/script.js') }}"></script>
+
     @if(session()->has('success') || session()->has('error'))
-        <div class="toast-container position-absolute p-3 bottom-0 end-0">
+        <div class="toast-container position-fixed p-3 bottom-0 end-0">
             <div class="toast align-items-center text-white @if(session()->has('success')) bg-success @else bg-danger @endif border-0 b" role="alert" aria-live="assertive" aria-atomic="true">
                 <div class="d-flex">
                 <div class="toast-body">
@@ -41,6 +41,9 @@
             </div>
         </div>
     @endif
+
+    <script type="text/javascript" src="{{ asset('js/jquery.mask.min.js') }}"></script>
+    <script src="{{ asset('js/script.js') }}"></script>
     @stack('scripts')
 </body>
 </html>
