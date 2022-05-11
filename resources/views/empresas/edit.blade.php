@@ -6,7 +6,7 @@
     <x-page-title title="Editar empresa" route="empresas.index" class="fs-3" />
     <hr class="mt-3 mb-5">
 
-    <x-section title="Dados gerais" description="Preencha as informações básicas da empresa">
+    <x-section title="Dados gerais" description="Preencha as informações básicas da empresa. A logotipo deve ser do tipo jpg, jpeg, png ou webp com tamanho mínimo de 100x100">
         <form method="POST" action="{{ route('empresas.update', $empresa->id) }}" enctype="multipart/form-data" novalidate>
             @csrf 
             @method('PUT')
@@ -19,7 +19,7 @@
 
                     <x-controls.input name="email" label="Email" type="email" maxlength="255" :value="$empresa->email" />
 
-                    <x-controls.input name="url" label="Site" type="url" class="mb-4" :value="$empresa->url" />
+                    <x-controls.input name="url" label="Site" type="url" class="mb-4" :value="$empresa->url" placeholder="https://"/>
 
                     <button type="submit" class="btn btn-primary float-end">Salvar</button>
                 </div>

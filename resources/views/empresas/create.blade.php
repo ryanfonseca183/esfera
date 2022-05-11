@@ -6,7 +6,7 @@
     <x-page-title title="Criar empresa" route="empresas.index" class="fs-3" />
     <hr class="mb-5 mt-3">
 
-    <x-section title="Dados gerais" description="Preencha as informações básicas da empresa">
+    <x-section title="Dados gerais" description="Preencha as informações básicas da empresa. A logotipo deve ser do tipo jpg, jpeg, png ou webp com tamanho mínimo de 100x100">
         <form method="POST" action="{{ route('empresas.store') }}" enctype="multipart/form-data" novalidate>
             @csrf
             <div class="row gy-3">
@@ -18,7 +18,7 @@
 
                     <x-controls.input name="email" label="Email" type="email" maxlength="255" />
 
-                    <x-controls.input name="url" label="Site" type="url" class="mb-4" />
+                    <x-controls.input name="url" label="Site" type="url" class="mb-4" placeholder="https://"/>
 
                     <button type="submit" class="btn btn-primary float-end">Salvar</button>
                 </div>

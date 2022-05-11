@@ -60,7 +60,9 @@ class EmpresaController extends Controller
      */
     public function show(Empresa $empresa)
     {
-        return view('empresas.show', compact('empresa'));
+        $funcionarios = $empresa->funcionarios()->paginate(10);
+
+        return view('empresas.show', compact('empresa', 'funcionarios'));
     }
 
     /**

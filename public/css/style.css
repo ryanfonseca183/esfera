@@ -64,6 +64,11 @@ hr {
     height: 50px;
     object-fit: cover;
 }
+@media (min-width: 768px) {
+    .table-responsive {
+        overflow-x: unset;
+    }
+}
 .table {
 	border-spacing: 0 15px;
 	border-collapse: separate;

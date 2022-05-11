@@ -22,12 +22,12 @@
             <div class="col">
                 <h1 class="h3">{{ $empresa->nome }}</h1>
                 <a href="mailto:{{ $empresa->email }}">{{ $empresa->email }}</a> <br/>
-                <a href="{{ $empresa->url }}">{{ $empresa->url }}</a>
+                <a href="{{ $empresa->url }}" target="_blank">{{ $empresa->url }}</a>
             </div>
         </div>
         <hr class="mt-4 mb-5">
         <x-page-title title="Funcionários">
-            <a href="{{ route('empresas.funcionarios.create', $empresa->id) }}">Novo <i class="bi bi-arrow-right ms-1"></i></a>
+            <a href="{{ route('empresas.funcionarios.create', $empresa->id) }}" class="btn btn-primary">Novo</a>
         </x-page-title>
         <div class="table-responsive mt-3">
             <table class="table mt-2">
