@@ -24,22 +24,22 @@
     @stack('styles')
 </head>
 <body>
-    
+    <header class="d-flex justify-content-center align-items-center mb-5 bg-white shadow-sm py-3">
+        <img src="{{ asset('img/logotipo.png') }}" alt="Página inicial" style="height: 75px">
+        <ul class="nav align-items-center">
+            <li class="nav-item">
+                <a href="{{ route('empresas.index') }}" class="nav-link fs-5 p-2">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <form method="POST" action="/logout">
+                    @csrf 
+                    <button type="submit" class="btn nav-link p-2 fs-5 ms-2">Sair</button>
+                </form>
+            </li>
+        </ul>
+    </header>
     <main class="container py-4">
-        <header class="d-flex justify-content-center align-items-center mb-5">
-            <img src="{{ asset('img/logotipo.png') }}" alt="Página inicial" style="height: 100px">
-            <ul class="nav">
-                <li class="nav-item">
-                    <a href="{{ route('empresas.index') }}" class="nav-link fs-5 p-2">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <form method="POST" action="/logout">
-                        @csrf 
-                        <button type="submit" class="btn nav-link p-2 fs-5 ms-2">Sair</button>
-                    </form>
-                </li>
-            </ul>
-        </header>
+        
         @yield('content')
     </main>
     
